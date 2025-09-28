@@ -9,7 +9,8 @@ import (
 
 func main() {
 	// 数据库连接配置
-	dsn := "root:root@tcp(localhost:3306)/release_atd?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "dmp:9Jd7TA5yw5Il3cI@tcp(172.16.3.25:3306)/adn?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn = "adx:CaPn1jxidkkE5@tcp(172.16.3.12:3306)/release_atd?charset=utf8&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true,
@@ -47,9 +48,7 @@ func main() {
 	g.WithDataTypeMap(dataMap)
 
 	// 指定需要生成的表
-	tables := []string{
-		"account_advertiser_detail",
-	}
+	tables := []string{""}
 
 	// 循环处理每个表
 	for _, table := range tables {
